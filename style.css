@@ -1,0 +1,174 @@
+:root {
+    --primary: #27ae60;
+    --dark: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1500');
+    background-size: cover;
+    z-index: -1;
+}
+
+.section-container {
+    display: none;
+    padding: 40px 20px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.section-container.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Cards & Glassmorphism */
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    margin: 80px auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 span {
+    color: var(--primary);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.btn-main {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background: #1e8449;
+}
+
+/* Store UI */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #eee;
+    width: 250px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.fruit-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.fruit-card:hover {
+    transform: translateY(-8px);
+}
+
+.fruit-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background: #f9f9f9;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.price {
+    color: var(--primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.btn-back-nav,
+.btn-back-small {
+    background: #eee;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.order-box {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary);
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}

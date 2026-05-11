@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitie - Fresh & Healthy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <section id="login-screen" class="active section-container">
+        <div class="glass-card">
+            <h1>Fresh<span>ly</span></h1>
+            <p>Enter your details to start shopping</p>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username">
+                <input type="email" id="email" placeholder="Email Address">
+            </div>
+            <button class="btn-main" onclick="handleLogin()">Login Now</button>
+        </div>
+    </section>
+
+    <section id="main-ui" class="section-container">
+        <nav class="navbar">
+            <button class="btn-back-nav" onclick="goToLogin()">← Logout</button>
+            <div class="search-box">
+                <input type="text" id="searchBar" placeholder="Search fruits..." onkeyup="searchFruits()">
+            </div>
+        </nav>
+
+        <div class="container">
+            <h2 class="section-title">Fresh Fruits Gallery</h2>
+            <div id="fruit-grid" class="grid">
+                </div>
+        </div>
+    </section>
+
+    <section id="payment-ui" class="section-container">
+        <div class="glass-card payment-card">
+            <button class="btn-back-small" onclick="backToStore()">← Back to Store</button>
+            <h2>Checkout</h2>
+            <div class="order-box">
+                <p>Buying: <span id="selected-fruit-name"></span></p>
+                <p>Price: <span id="selected-fruit-price"></span></p>
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Card Number (0000 0000 0000)">
+                <div class="row">
+                    <input type="text" placeholder="MM/YY">
+                    <input type="text" placeholder="CVC">
+                </div>
+            </div>
+            <button class="btn-main" onclick="processPayment()">Confirm & Pay</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
