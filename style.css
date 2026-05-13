@@ -1,6 +1,7 @@
 :root {
     --primary: #27ae60;
     --dark: #2c3e50;
+    --danger: #e74c3c;
 }
 
 * {
@@ -39,15 +40,8 @@ body {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* Cards & Glassmorphism */
@@ -61,9 +55,7 @@ body {
     text-align: center;
 }
 
-h1 span {
-    color: var(--primary);
-}
+h1 span { color: var(--primary); }
 
 .input-group input {
     width: 100%;
@@ -85,11 +77,9 @@ h1 span {
     transition: 0.3s;
 }
 
-.btn-main:hover {
-    background: #1e8449;
-}
+.btn-main:hover { background: #1e8449; }
 
-/* Store UI */
+/* Store UI & Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -109,6 +99,21 @@ h1 span {
     width: 250px;
 }
 
+/* --- New Cart Button Style --- */
+.cart-btn {
+    background: var(--dark);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.cart-btn:hover { background: var(--primary); }
+
+/* Grid & Fruit Cards */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -125,16 +130,13 @@ h1 span {
     transition: 0.3s;
 }
 
-.fruit-card:hover {
-    transform: translateY(-8px);
-}
+.fruit-card:hover { transform: translateY(-8px); }
 
 .fruit-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     display: block;
-    background: #f9f9f9;
 }
 
 .card-content {
@@ -149,26 +151,90 @@ h1 span {
     margin-bottom: 10px;
 }
 
-.btn-back-nav,
-.btn-back-small {
-    background: #eee;
+/* --- SIDEBAR CART STYLING --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Hidden by default */
+    width: 350px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.open {
+    right: 0; /* Slide in */
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: var(--dark);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
     border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
+    color: white;
+    font-size: 1.5rem;
     cursor: pointer;
-    font-size: 0.9rem;
+}
+
+.cart-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background: #f9f9f9;
+}
+
+.total-div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
+.btn-checkout {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Payment / Order Summary Box */
 .order-box {
     background: #f9f9f9;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
     border-left: 5px solid var(--primary);
+    text-align: left;
 }
 
-.row {
-    display: flex;
-    gap: 10px;
-}
+.row { display: flex; gap: 10px; }
